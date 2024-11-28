@@ -58,7 +58,7 @@ now login from the cat user which we created before.
 
 we will see the projects with the same pattern which we referred to in the item roles section.
 
-# Create a pipeline to execute a shell script, on git, on scripting task, Monitor disk utlization and send mail if > 80%, Process Management
+# Create a pipeline to execute a shell script, on git, on scripting task, Monitor disk utlization and send mail if > 80%, Process Management, take inputs, check for errors, cleanup, backup, logging
 
 ![Screenshot from 2024-11-28 23-21-52](https://github.com/user-attachments/assets/dd48667f-5446-4343-ac99-9438e4311e93)
 
