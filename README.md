@@ -80,3 +80,32 @@ This Bash script monitors disk usage of the root directory. It retrieves the usa
 
 
 This Bash script automates backup creation with options for compression. It accepts source and destination directories via command-line arguments, validates them, and ensures the directories exist (creating the destination if necessary). Backups are named with timestamps for uniqueness. If the `-c` flag is provided, the backup is compressed into a `.tar.gz` file; otherwise, files are copied directly. Operations are logged in a file, and detailed error handling ensures reliability. Additionally, backups older than 7 days are automatically deleted to save space. This script streamlines backup management, combining flexibility, automation, and maintenance to safeguard critical data effectively.
+
+# Build Java app and trigger pipeline
+
+![Screenshot from 2024-11-28 23-34-51](https://github.com/user-attachments/assets/74af012c-c023-4e6a-a1c3-fd1c1a7de1ea)
+
+this is done so as to install java 17 with the correct version mentioned
+
+![Screenshot from 2024-11-28 23-34-58](https://github.com/user-attachments/assets/9cc0c82b-0cb0-4d32-b90a-07388c205b76)
+
+this is done so as to install maven 3.9.9 
+
+![Screenshot from 2024-11-28 23-38-28](https://github.com/user-attachments/assets/b9d88c88-0812-466e-8329-cba0d63e5af7)
+
+This Jenkins pipeline automates a build-test-deploy workflow for a Java project. It checks out the source code from a Git repository and builds it using Maven, skipping tests during packaging. Test execution follows in the next stage, with results published via JUnit. The "Deliver" stage runs a deployment script (`deliver.sh`). 
+The pipeline supports branch selection via parameters and triggers builds on GitHub pushes. It uses Maven 3.9.9 and Java 17, with a 10-minute timeout for execution. Post-build actions include artifact archiving, workspace cleanup, and logging pipeline status (success or failure). The workflow ensures automated, reproducible builds with integrated testing and delivery.
+
+![Screenshot from 2024-11-28 23-41-43](https://github.com/user-attachments/assets/9708cf05-e318-4bbb-b0cd-5401b46e81ff)
+
+added the github repository to the pipeline and added the branch as a parameter with default value being origin/master
+
+![Screenshot from 2024-11-28 23-41-53](https://github.com/user-attachments/assets/2cc177d9-c724-42c6-91f9-02e5f2e5d812)
+
+in the pipeline section, in the definition, do pipeline script from SCM, with pasting the git repository and branch specifier being */main
+
+![Screenshot from 2024-11-28 23-42-05](https://github.com/user-attachments/assets/aff8401e-c536-4d3e-af18-08446962b2ce)
+
+script path has been mentioned where the script is executed from being example-app-pipeline/Jenkinsfile, this script has been mentioned above with its respective explaination.
+
+
