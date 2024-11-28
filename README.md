@@ -75,3 +75,16 @@ now login from the cat user which we created before.
 ![Screenshot from 2024-11-28 22-47-58](https://github.com/user-attachments/assets/b9fa07eb-2632-4301-8dc9-cd510cb8d58d)
 
 we will see the projects with the same pattern which we referred to in the item roles section.
+
+# Create a pipeline to execute a shell script, on git, on scripting task, Monitor disk utlization and send mail if > 80%, Process Management
+
+![Screenshot from 2024-11-28 23-21-52](https://github.com/user-attachments/assets/dd48667f-5446-4343-ac99-9438e4311e93)
+all the scripts in order to run the pipeline are present on the github, namely JenkinsFile, meow.sh, script1.sh and script2.sh
+
+![image](https://github.com/user-attachments/assets/2e997529-b6d1-444e-817b-d04342f79db8)
+This Jenkins pipeline automates tasks with three stages: Git Checkout (cloning a repository), Check Disk Usage (running script1.sh), and Process Management (running meow.sh). Triggered hourly, it sends an email notification on failure, providing job details and console output link to the specified email address.
+
+![Screenshot from 2024-11-28 23-25-32](https://github.com/user-attachments/assets/3b6d9553-75cc-4078-ac4c-fa5739331190)
+This Bash script identifies resource-intensive processes. It lists the top 5 processes consuming the most CPU and memory using `ps aux` with appropriate sorting. Additionally, it detects zombie processes (stuck processes) by filtering for processes with a `Z` state using `awk`, ensuring efficient process monitoring and troubleshooting.
+
+
