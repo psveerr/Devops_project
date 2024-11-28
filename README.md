@@ -12,6 +12,13 @@ jenkins(): Installs Jenkins. For Debian, it configures Jenkins' official reposit
 
 The script calls these functions in sequence to detect the OS and install the necessary tools, ensuring compatibility and automation.
 
+# Setup Master-slave architecture
+![Screenshot from 2024-11-28 23-17-06](https://github.com/user-attachments/assets/fb10a99d-da05-416e-9a6e-04dbf791480e)
+Creating a node in order to setup master slave architecture, this is done by using private key, username and host information from a different system.
+
+![Screenshot from 2024-11-28 23-17-46](https://github.com/user-attachments/assets/02faa159-94ef-4997-bcee-bf951673ea01)
+this is made in order to run 5 different tasks, whatever are required from the user as per their demand.
+
 
 # Setup Role based authorization
 
